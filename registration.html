@@ -1,32 +1,68 @@
 <!DOCTYPE html>
-<html lang="en">
+<html>
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Registration Form</title>
-    <link rel="stylesheet" href="registration.css">
+    <title>Event Registration Form</title>
+    <style>
+        body {
+            font-family: Arial;
+            background: #f5f5f5;
+            padding: 40px;
+        }
+        .container {
+            background: white;
+            padding: 20px;
+            width: 350px;
+            margin: auto;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0,0,0,0.1);
+        }
+        input, button {
+            width: 100%;
+            padding: 10px;
+            margin-top: 10px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
+        button {
+            background: #4CAF50;
+            color: white;
+            cursor: pointer;
+        }
+        button:hover {
+            background: #45a049;
+        }
+    </style>
 </head>
 <body>
 
-    <div class="container">
-        <h2>Registration Form</h2>
+<div class="container">
+    <h2>Event Registration</h2>
 
-        <form action="#">
-            <label for="fullname">Full Name</label>
-            <input type="text" id="fullname" placeholder="Enter your name" required>
+    <form id="regForm">
+        <label>Name</label>
+        <input type="text" id="name" required>
 
-            <label for="email">Email</label>
-            <input type="email" id="email" placeholder="Enter your email" required>
+        <label>Email</label>
+        <input type="email" id="email" required>
 
-            <label for="password">Password</label>
-            <input type="password" id="password" placeholder="Enter your password" required>
+        <label>Phone</label>
+        <input type="text" id="phone" required>
 
-            <label for="confirm">Confirm Password</label>
-            <input type="password" id="confirm" placeholder="Confirm your password" required>
+        <label>Event</label>
+        <input type="text" id="event" placeholder="Workshop / Seminar" required>
 
-            <button type="submit">Register</button>
-        </form>
-    </div>
+        <button type="submit">Register</button>
+    </form>
+
+    <p id="msg" style="color: green; margin-top: 10px;"></p>
+</div>
+
+<script>
+    document.getElementById("regForm").addEventListener("submit", function(e) {
+        e.preventDefault();
+        document.getElementById("msg").innerText = "Registration Successful!";
+    });
+</script>
 
 </body>
 </html>
